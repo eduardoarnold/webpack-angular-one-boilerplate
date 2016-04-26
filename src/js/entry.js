@@ -1,5 +1,4 @@
-import Placeholder from './placeholder.js';
+'use strict';
 
-let placeholder = new Placeholder('placeholder', 'entryjs');
-
-document.getElementById('date').innerHTML = placeholder.date;
+import bootstrap from './bootstrap'
+bootstrap();

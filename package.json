@@ -29,6 +29,7 @@
     "webpack-stream": "^3.1.0"
   },
   "dependencies": {
+    "angular": "^1.5.5",
     "chalk": "^1.1.1",
     "express": "^4.13.4",
     "portfinder": "^1.0.3"
