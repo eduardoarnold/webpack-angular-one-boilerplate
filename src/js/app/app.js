@@ -2,13 +2,13 @@
 
 import angular from 'angular';
 import AppController from './controller';
-import AppService from './service';
-import AppFactory from './factory';
+import Provider from './provider';
 
 const app = angular
   .module('app', [])
-  .controller('AppController', ['$log', 'AppService', 'AppFactory', AppController])
-  .service('AppService', ['$log', AppService])
-  .factory('AppFactory', ['$log', AppFactory]);
+  .controller('AppController', ['$log', 'AppService', 'AppFactory', 'AppProvider', AppController])
+  .service('AppService', Provider)
+  .factory('AppFactory', Provider)
+  .provider('AppProvider', Provider);
 
 export default app;

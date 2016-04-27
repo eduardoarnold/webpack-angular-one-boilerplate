@@ -2,10 +2,12 @@
 
 import app from './app'
 
-const AppController = ($log, AppService, AppFactory) => {
+const AppController = ($log, AppService, AppFactory, AppProvider) => {
   $log.debug('App Controller Ready');
-  AppService.startService();
-  AppFactory.startFactory();
+
+  $log.debug(AppService);
+  $log.debug(AppFactory);
+  $log.debug(AppProvider);
 }
 
 export default AppController;
