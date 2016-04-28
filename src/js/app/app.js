@@ -1,14 +1,13 @@
 'use strict';
 
 import angular from 'angular';
-import AppController from './controller';
-import Provider from './provider';
+import uirouter from 'angular-ui-router';
 
-const app = angular
-  .module('app', [])
-  .controller('AppController', ['$log', 'AppService', 'AppFactory', 'AppProvider', AppController])
-  .service('AppService', Provider)
-  .factory('AppFactory', Provider)
-  .provider('AppProvider', Provider);
+import config from './config';
+
+angular.module('index', []);
+const app = angular.module('app', [uirouter, 'index']);
+
+config(app, angular);
 
 export default app;
