@@ -1,21 +1,19 @@
 'use strict';
-import IndexController from './index/index.controller';
+// Attach components on modules and start angular states
+import states from './config/states.js';
 
-const config = (appModule, angular) => {
-  appModule.controller('IndexController', ['$scope', '$log', IndexController]);
-
-  appModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', ($stateProvider, $locationProvider, $urlRouterProvider) => {
-
-    $urlRouterProvider.otherwise('/index');
-
-    $stateProvider
-      .state('index', {
-          url: '/index',
-          template: require('./index/index.html'),
-          controller: 'IndexController',
-          controllerAs: 'index'
-        });
-  }]);
+import indexController from './index/index.controller.js';
+const loadIndex = (module) => {
+  indexController(module);
 };
+
+var loadModules = (modules) => {
+  loadIndex(modules.index);
+}
+
+const config = (app, angular, modules) => {
+  loadModules(modules);
+  states.load(app, angular);
+}
 
 export default config;

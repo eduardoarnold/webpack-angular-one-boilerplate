@@ -1,13 +1,17 @@
 'use strict';
-
+// load app modules, integrations and start configurations
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 
-import config from './config';
-
-angular.module('index', []);
+const index = angular.module('index', []);
 const app = angular.module('app', [uirouter, 'index']);
 
-config(app, angular);
+const modules = {
+  app: app,
+  index: index
+};
+
+import config from './config';
+config(app, angular, modules);
 
 export default app;
