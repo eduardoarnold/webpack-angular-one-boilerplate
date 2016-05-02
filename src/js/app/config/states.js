@@ -3,7 +3,7 @@
 const loadStates = (appModule, angular) => {
   appModule.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
 
-    $urlRouterProvider.otherwise('/page1');
+    $urlRouterProvider.otherwise('/index');
 
     $stateProvider.state('index', {
       url: '/index',
