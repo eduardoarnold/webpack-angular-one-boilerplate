@@ -5,7 +5,7 @@ import states from './config/states.js';
 import indexController from './index/index.controller.js';
 import indexService from './index/index.service.js';
 import indexFactory from './index/index.factory.js';
-import indexStyle from './index/index.css';
+require('./index/index.css');
 const loadIndex = (module) => {
   indexController(module);
   indexService(module);
@@ -14,13 +14,20 @@ const loadIndex = (module) => {
 
 var loadModules = (modules) => {
   loadIndex(modules.index);
-}
+};
 
-import indexProvider from './index/index.provider.js'
+import indexProvider from './index/index.provider.js';
 const config = (app, angular, modules) => {
+  app.config(['$compileProvider', function ($compileProvider) {
+    // Increase application performance
+    // https://docs.angularjs.org/api/ng/provider/$compileProvider
+    // https://docs.angularjs.org/guide/production
+    $compileProvider.debugInfoEnabled(false);
+  }]);
+
   loadModules(modules);
   indexProvider(app);
-  states.load(app, angular);
-}
+  states.load(app);
+};
 
 export default config;

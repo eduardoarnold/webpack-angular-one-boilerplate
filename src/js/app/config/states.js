@@ -1,6 +1,6 @@
 'use strict';
 // State loader
-const loadStates = (appModule, angular) => {
+const loadStates = (appModule) => {
   appModule.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
 
     $urlRouterProvider.otherwise('/index');
@@ -13,7 +13,7 @@ const loadStates = (appModule, angular) => {
     });
 
   }]);
-}
+};
 
 export default {
   load: loadStates
