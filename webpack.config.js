@@ -10,6 +10,9 @@ module.exports = {
 		publicPath: ".www/",
     filename: 'bundle.js'
 	},
+	estlint: {
+		configFile: '.eslintrc.json'
+	},
 	module: {
     loaders: [
       {
@@ -27,6 +30,12 @@ module.exports = {
 			{
 				test: /\.css$/,
 				loader: "style-loader!css-loader"
+			},
+			{
+				test: /\.js$/,
+				loader: "eslint-loader",
+				emitError: true,
+				failOnWarning: true
 			}
     ]
 	},
