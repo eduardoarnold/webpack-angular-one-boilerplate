@@ -1,0 +1,17 @@
+div {
+  margin: 10, 10, 10, 10;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.left {
+  background-color: rgb(26, 136, 136);
+}
+
+.center {
+  background-color: rgba(39, 173, 215, 0.86);
+}
+
+.right {
+  background: rgb(79, 50, 163);
+}

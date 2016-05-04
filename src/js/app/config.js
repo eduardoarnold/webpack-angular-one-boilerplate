@@ -5,6 +5,7 @@ import states from './config/states.js';
 import indexController from './index/index.controller.js';
 import indexService from './index/index.service.js';
 import indexFactory from './index/index.factory.js';
+import indexStyle from './index/index.css';
 const loadIndex = (module) => {
   indexController(module);
   indexService(module);
