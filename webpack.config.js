@@ -4,7 +4,7 @@ var webpack = require("webpack");
 
 module.exports = {
 	cache: true,
-	entry: './src/js/entry.js',
+	entry: './src/entry.js',
 	output: {
     path: path.join(__dirname, 'www/dist/'),
 		publicPath: ".www/",
@@ -13,7 +13,7 @@ module.exports = {
 	module: {
     loaders: [
       {
-        test: path.join(__dirname, 'src/js'),
+        test: path.join(__dirname, 'src'),
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
@@ -23,6 +23,10 @@ module.exports = {
 			{
 				test: /\.html$/,
 				loader: "raw",
+			},
+			{
+				test: /\.css$/,
+				loader: "style-loader!css-loader"
 			}
     ]
 	},
