@@ -1,5 +1,4 @@
-# Lean Scaffolding Webpack
-Lightweight scaffolding template application using webpack.
+Lightweight scaffolding boilerplate using webpack with angular
 
 ### CLI
 ```sh
