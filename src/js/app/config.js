@@ -2,6 +2,8 @@
 // Attach components on modules and start angular states
 import states from './config/states.js';
 
+import calendarService from './date/calendar.service.js';
+
 import indexController from './index/index.controller.js';
 import indexService from './index/index.service.js';
 import indexFactory from './index/index.factory.js';
@@ -10,7 +12,9 @@ const loadIndex = (module) => {
   indexController(module);
   indexService(module);
   indexFactory(module);
+  calendarService(module);
 };
+
 
 var loadModules = (modules) => {
   loadIndex(modules.index);

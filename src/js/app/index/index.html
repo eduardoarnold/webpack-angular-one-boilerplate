@@ -3,3 +3,25 @@
     <div class="pure-u-1-3 center"> {{factory}} </div>
     <div class="pure-u-1-3 right"> {{provider}} </div>
 </div>
+<div class="pure-g pure-form">
+    <div class="pure-u-1-3 left">
+        <select ng-options="day for day in date.days"
+              ng-model="date.day"></select>
+    </div>
+    <div class="pure-u-1-3 center">
+        <select ng-options="month.key as month.name for month in date.months"
+              ng-model="date.month" ng-change="reloadDays(date.year, date.month)"></select>
+    </div>
+    <div class="pure-u-1-3 right">
+        <select ng-options="year for year in date.years"
+              ng-model="date.year" ng-change="reloadDays(date.year, date.month)"></select>
+    </div>
+</div>
+<div class="pure-g pure-form">
+    <div class="pure-u-1-3 left">
+        <button class="pure-button" ng-click="translateDate(date.year, date.month, date.day)">Print Date</button>
+    </div>
+    <div class="pure-u-1-3 center">
+        <span>{{date.translated}}</span>
+    </div>
+</div>
